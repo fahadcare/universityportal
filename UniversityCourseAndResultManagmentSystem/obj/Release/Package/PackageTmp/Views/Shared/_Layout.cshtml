@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - University Portal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("style", required: false)
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/default.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="load"></div>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <h1>University Management</h1>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                @*<div class="navbar-collapse collapse">*@
+                    <ul id="drop-nav" class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        
+                        <li>
+                            <a href="#">Department</a>
+                            <ul>
+                                <li>@Html.ActionLink("Create Department", "Create", "Department")</li>
+                                <li>@Html.ActionLink("View All Departments", "Index", "Department")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Course Panel</a>
+                            <ul>
+                                <li>@Html.ActionLink("Save Course", "Create", "Course")</li>
+                                <li>@Html.ActionLink("View Course Statics", "ViewCourseStatus", "AssignCourse")</li>
+                                <li>@Html.ActionLink("Unassign All Courses", "UnassignCourses", "Course")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Teacher Panel</a>
+                            <ul>
+                                <li>@Html.ActionLink("Save Teacher", "Create", "Teacher")</li>
+                                <li>@Html.ActionLink("Course Assign to Teacher", "Save", "AssignCourse")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Student Panel</a>
+                            <ul>
+                                <li>@Html.ActionLink("Register Student", "Create", "Student")</li>
+                                <li>@Html.ActionLink("Enroll In a Course", "Create", "Enroll")</li>
+                                <li>@Html.ActionLink("Save Student Result", "SaveResult", "Enroll")</li>
+                                <li>@Html.ActionLink("View Result", "ViewResult", "Enroll")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Class Schedule</a>
+                            <ul>
+                                <li>@Html.ActionLink("Allocate Classroms", "Create", "RoomAllocation")</li>
+                                <li>@Html.ActionLink("Schedule & Room Allocation", "Index", "RoomAllocation")</li>
+                                <li>@Html.ActionLink("Unallocate All Classrooms", "UnallocateRoom", "RoomAllocation")</li>
+                            </ul>
+                        </li>
+                        @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        @*</div>*@
+        <!-- /.container -->
+    </nav>
+
+   
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+           
+        </div>
+    </div>*@
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BITM-63 Batch- Combo Coders </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+    <!-- Core JavaScript Files -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.scrollTo.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Scripts/custom.js"></script>
+
+
+</body>
+</html>
